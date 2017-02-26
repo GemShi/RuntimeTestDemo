@@ -15,6 +15,7 @@
 		DF0630531E619FD2003E7D10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0630511E619FD2003E7D10 /* LaunchScreen.storyboard */; };
 		DF06305E1E619FD2003E7D10 /* RuntimeTestDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF06305D1E619FD2003E7D10 /* RuntimeTestDemoTests.m */; };
 		DF0630691E619FD2003E7D10 /* RuntimeTestDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0630681E619FD2003E7D10 /* RuntimeTestDemoUITests.m */; };
+		DF0630781E61A00E003E7D10 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0630771E61A00E003E7D10 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		DF0630641E619FD2003E7D10 /* RuntimeTestDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuntimeTestDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0630681E619FD2003E7D10 /* RuntimeTestDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeTestDemoUITests.m; sourceTree = "<group>"; };
 		DF06306A1E619FD2003E7D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF0630761E61A00E003E7D10 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		DF0630771E61A00E003E7D10 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				DF0630471E619FD1003E7D10 /* AppDelegate.m */,
 				DF0630491E619FD1003E7D10 /* ViewController.h */,
 				DF06304A1E619FD2003E7D10 /* ViewController.m */,
+				DF0630761E61A00E003E7D10 /* Person.h */,
+				DF0630771E61A00E003E7D10 /* Person.m */,
 				DF06304C1E619FD2003E7D10 /* Main.storyboard */,
 				DF06304F1E619FD2003E7D10 /* Assets.xcassets */,
 				DF0630511E619FD2003E7D10 /* LaunchScreen.storyboard */,
@@ -275,6 +280,7 @@
 			files = (
 				DF06304B1E619FD2003E7D10 /* ViewController.m in Sources */,
 				DF0630481E619FD1003E7D10 /* AppDelegate.m in Sources */,
+				DF0630781E61A00E003E7D10 /* Person.m in Sources */,
 				DF0630451E619FD1003E7D10 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
