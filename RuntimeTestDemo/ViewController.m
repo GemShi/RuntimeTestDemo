@@ -75,7 +75,7 @@
 -(void)getAllMethod
 {
     unsigned int count;
-    //获取指向方法的指针
+    //获取指向方法的指针Method:成员方法
     Method *methods = class_copyMethodList([Person class], &count);
     for (int i = 0; i < count; i++) {
         //取出其中一个
@@ -111,6 +111,11 @@
     }
     //释放
     free(properties);
+    /*
+     *class_copyPropertyList和class_copyIvarList区别：
+     *class_copyPropertyList获取由@property声明的属性
+     *class_copyIvarList获取所有的成员变量
+     */
 }
 
 #pragma mark - 获取一个类的成员变量名
@@ -118,6 +123,10 @@
 {
     unsigned int count;
     //获取成员变量结构体
+    /*
+     *关于&count的理解：
+     *获取的成员变量以数组的形式返回，对count取地址传入表示将数组的个数放到这个地址的变量array.count = count;
+     */
     Ivar *ivars = class_copyIvarList([Person class], &count);
     for (int i = 0; i < count; i++) {
         Ivar ivar = ivars[i];
