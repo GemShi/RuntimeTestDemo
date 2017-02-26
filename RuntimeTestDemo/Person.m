@@ -15,6 +15,7 @@
 
 @implementation Person
 
+//解归档：遵循NSCoding协议，实现两个方法
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     unsigned int count;
@@ -23,6 +24,7 @@
         objc_property_t property = properties[i];
         const char *name = property_getName(property);
         NSString *proName = [NSString stringWithUTF8String:name];
+        //解码
         NSString *proValue = [aDecoder decodeObjectForKey:proName];
         [self setValue:proValue forKey:proName];
     }
@@ -39,6 +41,7 @@
         const char *name = property_getName(property);
         NSString *proName = [NSString stringWithUTF8String:name];
         NSString *proValue = [self valueForKey:proName];
+        //归档
         [aCoder encodeObject:proValue forKey:proName];
     }
     free(properties);

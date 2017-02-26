@@ -55,6 +55,7 @@
 -(void)getProtocol
 {
     unsigned int count;
+    //指向本类遵循的所有协议（不遵循协议则获取不到）
     __unsafe_unretained Protocol **protocols = class_copyProtocolList([self class], &count);
     for (int i = 0; i < count; i++) {
         Protocol *pro = protocols[i];
@@ -74,15 +75,22 @@
 -(void)getAllMethod
 {
     unsigned int count;
+    //获取指向方法的指针
     Method *methods = class_copyMethodList([Person class], &count);
     for (int i = 0; i < count; i++) {
+        //取出其中一个
         Method method = methods[i];
+        //获取方法名
         SEL methodSel = method_getName(method);
+        //将方法名转为C语言字符串
         const char *name = sel_getName(methodSel);
+        //转化为OC字符串
         NSString *methodName = [NSString stringWithUTF8String:name];
+        //获取参数个数
         int arguements = method_getNumberOfArguments(method);
         NSLog(@"%d == %@  %d",i,methodName,arguements);
     }
+    //释放
     free(methods);
 }
 
@@ -90,13 +98,18 @@
 -(void)getAttribute
 {
     unsigned int count;
+    //获取指向该类所有属性指针
     objc_property_t *properties = class_copyPropertyList([Person class], &count);
     for (int i = 0; i < count; i++) {
+        //获取该类一个属性指针
         objc_property_t property = properties[i];
+        //获取属性名称
         const char *name = property_getName(property);
+        //转化为OC字符串
         NSString *key = [NSString stringWithUTF8String:name];
         NSLog(@"%d == %@",i,key);
     }
+    //释放
     free(properties);
 }
 
@@ -104,13 +117,17 @@
 -(void)getMemberVariable
 {
     unsigned int count;
+    //获取成员变量结构体
     Ivar *ivars = class_copyIvarList([Person class], &count);
     for (int i = 0; i < count; i++) {
         Ivar ivar = ivars[i];
+        //根据Ivar获取成员变量名称
         const char *name = ivar_getName(ivar);
+        //将C字符串转化为OC字符串
         NSString *key = [NSString stringWithUTF8String:name];
         NSLog(@"%d == %@",i,key);
     }
+    //释放
     free(ivars);
 }
 
