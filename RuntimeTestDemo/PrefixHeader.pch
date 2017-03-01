@@ -13,5 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import <objc/runtime.h>
+#import "UIViewController+Swizzling.h"
+#import "NSArray+Swizzling.h"
 
 #endif /* PrefixHeader_pch */
