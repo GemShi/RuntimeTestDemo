@@ -16,6 +16,9 @@
 		DF06305E1E619FD2003E7D10 /* RuntimeTestDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF06305D1E619FD2003E7D10 /* RuntimeTestDemoTests.m */; };
 		DF0630691E619FD2003E7D10 /* RuntimeTestDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0630681E619FD2003E7D10 /* RuntimeTestDemoUITests.m */; };
 		DF0630781E61A00E003E7D10 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0630771E61A00E003E7D10 /* Person.m */; };
+		DFF05B351E6725BA00DBF1EE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF05B341E6725BA00DBF1EE /* FirstViewController.m */; };
+		DFF05B381E67261C00DBF1EE /* UIViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF05B371E67261C00DBF1EE /* UIViewController+Swizzling.m */; };
+		DFF05B3C1E6727BC00DBF1EE /* NSArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF05B3B1E6727BC00DBF1EE /* NSArray+Swizzling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,13 @@
 		DF06306A1E619FD2003E7D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF0630761E61A00E003E7D10 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		DF0630771E61A00E003E7D10 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		DFF05B331E6725BA00DBF1EE /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		DFF05B341E6725BA00DBF1EE /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		DFF05B361E67261C00DBF1EE /* UIViewController+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzling.h"; sourceTree = "<group>"; };
+		DFF05B371E67261C00DBF1EE /* UIViewController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzling.m"; sourceTree = "<group>"; };
+		DFF05B391E67273F00DBF1EE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DFF05B3A1E6727BC00DBF1EE /* NSArray+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Swizzling.h"; sourceTree = "<group>"; };
+		DFF05B3B1E6727BC00DBF1EE /* NSArray+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Swizzling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +120,13 @@
 				DF06304A1E619FD2003E7D10 /* ViewController.m */,
 				DF0630761E61A00E003E7D10 /* Person.h */,
 				DF0630771E61A00E003E7D10 /* Person.m */,
+				DFF05B331E6725BA00DBF1EE /* FirstViewController.h */,
+				DFF05B341E6725BA00DBF1EE /* FirstViewController.m */,
+				DFF05B361E67261C00DBF1EE /* UIViewController+Swizzling.h */,
+				DFF05B371E67261C00DBF1EE /* UIViewController+Swizzling.m */,
+				DFF05B3A1E6727BC00DBF1EE /* NSArray+Swizzling.h */,
+				DFF05B3B1E6727BC00DBF1EE /* NSArray+Swizzling.m */,
+				DFF05B391E67273F00DBF1EE /* PrefixHeader.pch */,
 				DF06304C1E619FD2003E7D10 /* Main.storyboard */,
 				DF06304F1E619FD2003E7D10 /* Assets.xcassets */,
 				DF0630511E619FD2003E7D10 /* LaunchScreen.storyboard */,
@@ -279,7 +296,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF06304B1E619FD2003E7D10 /* ViewController.m in Sources */,
+				DFF05B3C1E6727BC00DBF1EE /* NSArray+Swizzling.m in Sources */,
 				DF0630481E619FD1003E7D10 /* AppDelegate.m in Sources */,
+				DFF05B381E67261C00DBF1EE /* UIViewController+Swizzling.m in Sources */,
+				DFF05B351E6725BA00DBF1EE /* FirstViewController.m in Sources */,
 				DF0630781E61A00E003E7D10 /* Person.m in Sources */,
 				DF0630451E619FD1003E7D10 /* main.m in Sources */,
 			);
@@ -430,6 +450,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RuntimeTestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = RuntimeTestDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Apple.RuntimeTestDemo;
@@ -441,6 +463,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RuntimeTestDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = RuntimeTestDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Apple.RuntimeTestDemo;
@@ -513,6 +537,7 @@
 				DF06306F1E619FD2003E7D10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF0630701E619FD2003E7D10 /* Build configuration list for PBXNativeTarget "RuntimeTestDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +546,7 @@
 				DF0630721E619FD2003E7D10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF0630731E619FD2003E7D10 /* Build configuration list for PBXNativeTarget "RuntimeTestDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +555,7 @@
 				DF0630751E619FD2003E7D10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

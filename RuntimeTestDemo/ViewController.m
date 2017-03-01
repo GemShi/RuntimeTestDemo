@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "Person.h"
-#import <objc/runtime.h>
+#import "FirstViewController.h"
 
 @interface ViewController ()<PersonDelegate>
 
@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self createUI];
     
     //获取一个类的成员变量名
 //    [self getMemberVariable];
@@ -33,6 +35,38 @@
 //    [self getProtocol];
     
     //runtime实现解归档
+//    [self Archiever];
+    
+    //数组防崩溃test
+    NSArray *array = @[@"runtime",@"swizzling",@"test"];
+    NSLog(@"%@",[array objectAtIndex:3]);
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)createUI
+{
+    self.view.backgroundColor = [UIColor whiteColor];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [button setTitle:@"button" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(clickToNext) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+}
+
+-(void)clickToNext
+{
+    FirstViewController *fvc = [[FirstViewController alloc]init];
+    [self.navigationController pushViewController:fvc animated:YES];
+}
+
+#pragma mark - 解归档
+-(void)Archiever
+{
     Person *p = [[Person alloc]init];
     p.name = @"GemShi";
     p.age = 24;
@@ -44,11 +78,6 @@
     [NSKeyedArchiver archiveRootObject:p toFile:path];
     Person *person = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
     NSLog(@"%@  %@",path,person);
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - 获取一个类的代理方法
