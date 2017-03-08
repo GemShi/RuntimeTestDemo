@@ -44,6 +44,7 @@
     //动态添加方法---与JS交互的时候，会经常用到performSelector
     Person *p = [[Person alloc]init];
     [p performSelector:sel_registerName("talk")];
+    [p performSelector:sel_registerName("talk:") withObject:@"qqqqqq"];
 }
 
 - (void)didReceiveMemoryWarning {

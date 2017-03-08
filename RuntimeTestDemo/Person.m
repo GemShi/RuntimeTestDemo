@@ -71,6 +71,8 @@
      */
     if (sel == @selector(talk)) {
         class_addMethod([Person class], sel, (IMP)talk, "v");
+    }else if (sel == @selector(talk:)){
+        class_addMethod([Person class], sel, (IMP)talk1, "v@:@");
     }
     
     return [super resolveInstanceMethod:sel];
@@ -84,6 +86,10 @@
 
 void talk(){
     NSLog(@"talking");
+}
+
+void talk1(id sel, SEL _cmd, id obj){
+    NSLog(@"talking%@",obj);
 }
 
 @end
