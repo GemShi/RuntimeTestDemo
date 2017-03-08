@@ -59,4 +59,31 @@
     NSLog(@"%s",__func__);
 }
 
+//动态添加方法的时候需要添加的方法
+//如果当一个类被调用了一个没有实现的方法，就会来到这里处理
++(BOOL)resolveInstanceMethod:(SEL)sel
+{
+    /**
+     1.cls:类类型
+     2.name:方法标号
+     3.imp:方法的实现，函数指针，是指向一个函数的
+     4.types:方法类型
+     */
+    if (sel == @selector(talk)) {
+        class_addMethod([Person class], sel, (IMP)talk, "v");
+    }
+    
+    return [super resolveInstanceMethod:sel];
+}
+
++(BOOL)resolveClassMethod:(SEL)sel
+{
+    NSLog(@"%@",NSStringFromSelector(sel));
+    return [super resolveClassMethod:sel];
+}
+
+void talk(){
+    NSLog(@"talking");
+}
+
 @end

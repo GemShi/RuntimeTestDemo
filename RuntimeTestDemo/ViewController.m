@@ -37,10 +37,13 @@
     //runtime实现解归档
 //    [self Archiever];
     
-    //数组防崩溃test
-    NSArray *array = @[@"runtime",@"swizzling",@"test"];
-    NSLog(@"%@",[array objectAtIndex:3]);
+    //方法互换---数组防崩溃test
+//    NSArray *array = @[@"runtime",@"swizzling",@"test"];
+//    NSLog(@"%@",[array objectAtIndex:3]);
     
+    //动态添加方法---与JS交互的时候，会经常用到performSelector
+    Person *p = [[Person alloc]init];
+    [p performSelector:sel_registerName("talk")];
 }
 
 - (void)didReceiveMemoryWarning {
